@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Magic Notes</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <style>
+        /*  remove outline and border on input tag  */
+        textarea {
+            /* outline:0px !important;
+            -webkit-appearance:none; */
+            box-shadow: none !important;
+
+        }
+
+        .form-control {
+            outline: 0px !important;
+            -webkit-appearance: none;
+            /* box-shadow: none !important; */
+            /* border-color: transparent; */
+
+        }
+
+        .form-control:focus {
+            border-color: #cccccc !important;
+            /* border-color: transparent !important; */
+            background-color: transparent !important;
+        }
+
+        .sidebar {
+            padding: .40rem;
+            margin-top: 1.25rem;
+            margin-bottom: 1.25rem;
+            /* margin-left: 1.25rem; */
+            border-left: 1px solid #17A2B8;
+            border-left-width: .25rem;
+            border-radius: .25rem;
+            border-left-color: #17A2B8;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-3">
+        <a class="navbar-brand" href="#">JS Magic Notes</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+            <div class="col-6">
+                <input id="search" class="form-control shadow-sm bg-light border border-light  mr-sm-1" type="search"
+                    placeholder="Search here" aria-label="Search">
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTAINER -->
+    <div class="container">
+        <h2 class="m-4 text-center">Wellcome to JS Magic Notes</h2>
+        <hr>
+        <div class="card mt-4 shadow-sm ">
+            <div class="card-body">
+                <h3 class="card-title text-dark">Add Note</h3>
+                <div class="form-group">
+                    <!-- <label for="exampleFormControlTextarea1">Example textarea</label> -->
+                    <textarea class="form-control shadow-sm" id="addNoteTxt" placeholder="Type Your Note here"
+                        id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <button type="button" id="addNoteBtn" class="btn btn-light btn-lg m-10 shadow-sm">Add Note</button>
+            </div>
+        </div>
+        <hr>
+        <div class="mt-2 sidebar">
+            <h3 class="text-muted d-inline">My Notes
+            </h3>
+            <button class="btn btn-danger float-right" onclick=" let alldelcnfrm = confirm('Are Your Sure To Delete All Notes'); if(alldelcnfrm){ clearAllNotes(); }else{ false } ">Delete All Notes</button>
+        </div>
+        <!-- <hr> -->
+        <div class="row" id="showNotes">
+            <!-- Show Notes Here by JavaScript Dynamically -->
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
